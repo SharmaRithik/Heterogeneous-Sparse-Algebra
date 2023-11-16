@@ -32,6 +32,19 @@ def dense_dense_pipeline(matrix1, matrix2):
     matrix_multiply(A, B)
     print(result)
 
+def check_result(matrix1, matrix2, result):
+    # Perform matrix multiplication to get the answer
+    answer = np.dot(matrix1, matrix2)
+
+    # Compare result and answer
+    if np.array_equal(result, answer):
+        print("Correct Answer")
+    else:
+        print("Incorrect Answer")
+
+    # Save result and answer to files
+    np.savetxt('result_matrix.txt', result)
+    np.savetxt('answer_matrix.txt', answer)
 #matrix1 = read_matrix("/home/riksharm/Heterogeneous-Sparse-Algebra/sparse_data/sparse_matrix_90")
 #matrix2 = read_matrix("/home/riksharm/Heterogeneous-Sparse-Algebra/dense_data/dense_matrix_100")
 
